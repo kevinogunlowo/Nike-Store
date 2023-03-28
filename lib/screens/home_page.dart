@@ -8,7 +8,7 @@ import 'account_page.dart';
 import 'cart_page.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  //pages to display
+  //Screens to be displayed
   final List<Widget> _pages = [
     //shop page
     const HomeScreen(),
@@ -70,93 +70,96 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: Drawer(
         backgroundColor: Colors.grey[900],
-        child: Column(
-           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            //logo
-            DrawerHeader(
-              child: Image.asset(
-                'assets/images/nike-logo-49334.png',
-                color: Colors.white,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Divider(
-                color: Colors.grey[800],
-              ),
-            ),
-             Column(
-              children: [
-                Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: const Icon(
-                  Icons.home,
+        child: ListView(children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              //logo
+              DrawerHeader(
+                child: Image.asset(
+                  'assets/images/nike-logo-49334.png',
                   color: Colors.white,
                 ),
-                title: const Text(
-                  'Home',
-                  style: TextStyle(color: Colors.white),
-                ),
-                 onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
-                  )),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: Icon(
-                  Icons.shopping_bag_rounded,
-                  color: Colors.white,
-                ),
-                title: Text(
-                  'Shop',
-                  style: TextStyle(color: Colors.white),
-                ),
-                 onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
-                  )),
-                
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: Icon(
-                  Icons.card_giftcard,
-                  color: Colors.white,
-                ),
-                title: Text(
-                  'Card',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-              ],
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: Icon(
-                  Icons.logout_rounded,
-                  color: Colors.white,
-                ),
-                title: Text(
-                  'Log Out',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            )
 
-            //contact us
-          ],
-        ),
+              //the divider line underneath the logo
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Divider(
+                  color: Colors.grey[800],
+                ),
+              ),
+              Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: const Icon(
+                        Icons.home,
+                        color: Colors.white,
+                      ),
+                      title: const Text(
+                        'Home',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          )),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: const Icon(
+                        Icons.shopping_bag_rounded,
+                        color: Colors.white,
+                      ),
+                      title: const Text(
+                        'Shop',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          )),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.card_giftcard,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Card',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.logout_rounded,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'Log Out',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              )
+
+              //contact us
+            ],
+          ),
+        ]),
       ),
       body: _pages[_selectedIndex],
     );
