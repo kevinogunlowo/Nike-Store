@@ -1,6 +1,6 @@
 class Shoe {
   final String name;
-  final int price;
+  final String price;
   final String imagePath;
   final String description;
 

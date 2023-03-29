@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
         //search bar
         Container(
           padding: const EdgeInsets.all(12),
-          margin: EdgeInsets.symmetric(horizontal: 25),
+          margin: const EdgeInsets.symmetric(horizontal: 25),
           decoration: BoxDecoration(
             color: Colors.grey[200],
             borderRadius: BorderRadius.circular(8),
@@ -51,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
         const SizedBox(
           height: 20,
         ),
+        
         //hot picks
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 15),
@@ -80,18 +81,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
         Expanded(
           child: ListView.builder(
-            itemCount: 6,
+            itemCount: 4,
             scrollDirection: Axis.horizontal,
             itemBuilder: ((context, index) {
               //create a shoe
               Shoe shoe = Shoe(
                   name: 'Air MAx',
-                  price: 500,
+                  price: '500'.toString(),
                   imagePath:
                       'assets/images/luis-felipe-lins-J2-wAQDckus-unsplash.jpg',
                   description: 'Fly shoe');
               return ShoeTile(shoe: shoe);
-            }), 
+            }),
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(top: 25.0, left: 25, right: 25),
+          child: Divider(
+            color: Colors.white,
           ),
         )
       ],
