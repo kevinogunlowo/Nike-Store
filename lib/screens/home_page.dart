@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
 
     //cart page
 
-    const CartScreen(),
+    CartScreen(),
 
     //card page
 
