@@ -6,7 +6,7 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Login'),
+      child: Text('Account Page'),
     );
   }
 }

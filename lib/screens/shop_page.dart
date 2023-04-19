@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 25.0),
             child: Text(
-              'YESTERDAY YOU SAID TOMORROW JUST DO IT',
+              'YESTERDAY YOU SAID TOMORROW \n JUST DO IT',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.grey),
             ),
@@ -97,28 +97,33 @@ class _HomeScreenState extends State<HomeScreen> {
           // List of Shoes for Sale
           Expanded(
             child: ListView.builder(
-              itemCount: 5,
+              shrinkWrap: false,
+              itemCount: 7,
               scrollDirection: Axis.horizontal,
               itemBuilder: ((context, index) {
                 //get a shoe from a shop list
                 Shoe shoe = value.getShoeList()[index];
-
+                    
                 //return to the shoe
                 return ShoeTile(
                   shoe: shoe,
                   onTap: () => addShoeToCart(shoe),
                 );
               }),
+              
             ),
+            
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 25, left: 20, right: 30),
-            child: Divider(
-              color: Colors.white,
-            ),
-          )
+          // const Padding(
+          //   padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
+          //   child: Divider(
+          //     color: Colors.purple,
+          //   ),
+          // )
         ],
+        
       ),
+      
     );
   }
 }

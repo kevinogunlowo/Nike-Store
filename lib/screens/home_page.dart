@@ -1,4 +1,4 @@
-import 'package:ecommerce/components/buttom_nav_bar.dart';
+import 'package:ecommerce/components/bottom_nav_bar.dart';
 import 'package:ecommerce/screens/card_page.dart';
 import 'package:ecommerce/screens/shop_page.dart';
 import 'package:ecommerce/utils/color.dart';
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
               Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: ListTile(
                       leading: const Icon(
                         Icons.home,
@@ -106,12 +106,12 @@ class _HomePageState extends State<HomePage> {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomePage(),
+                            builder: (context) => const HomePage(),
                           )),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: ListTile(
                       leading: const Icon(
                         Icons.shopping_bag_rounded,
@@ -124,21 +124,26 @@ class _HomePageState extends State<HomePage> {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomePage(),
+                            builder: (context) => CartScreen(),
                           )),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: ListTile(
-                      leading: Icon(
+                      leading: const Icon(
                         Icons.card_giftcard,
                         color: Colors.white,
                       ),
-                      title: Text(
+                      title: const Text(
                         'Card',
                         style: TextStyle(color: Colors.white),
                       ),
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CardScreen(),
+                          )),
                     ),
                   ),
                 ],

@@ -17,4 +17,6 @@ class AppColors {
   static final Color card2Color = Color.fromRGBO(149, 117, 205, 1);
   static final Color card3Color = Color.fromARGB(255, 42, 96, 212);
   static final Color dotColor = Color(0xFF3F51B5);
+  
+  
 }
