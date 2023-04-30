@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'cart.dart';
 
 class CartItem extends StatefulWidget {
-  Shoe shoe;
+  final Shoe shoe;
   CartItem({super.key, required this.shoe});
 
   @override
